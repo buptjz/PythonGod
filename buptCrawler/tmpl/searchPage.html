@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>WangJZ Mobile Page</title>
+
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<link href="/css/buttons.css" rel="stylesheet" type="text/css">
+<link href="/css/type.css" rel="stylesheet" type="text/css">
+<link href="/css/add2home.css" rel="stylesheet" type="text/css">
+<link href="/css/flexslider.css" rel="stylesheet" type="text/css">
+<link href="/css/photoswipe.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body> 
+
+<div class="site">
+  <div class="navigation">
+	<a id="首页"  href="/display/defaultPage">
+    	<img src="/images/nav/item1ns.png" alt="img">
+	    <em class="under-icon-text">首页</em>
+    </a>
+    <a id="分类"  href="/display/classification">
+    	<img src="/images/nav/item2ns.png" alt="img">
+    	<em class="under-icon-text">分类</em>
+    </a>
+    <a id="全文搜索" class="selected" href="/display/searchPage">
+    	<img src="/images/nav/item3ns.png" alt="img">
+    	<em class="under-icon-text">全文搜索</em>
+    </a>
+    <a id="查询结果"  href="/display/searchResult?keyword=&page=1">
+    	<img src="/images/nav/item5ns.png" alt="img">
+    	<em class="under-icon-text">查询结果</em>
+    </a>
+    <a id="关于我们" href="/display/aboutUs">
+    	<img src="/images/nav/item4ns.png" alt="img">
+    	<em class="under-icon-text">关于我们</em>
+    </a>
+</div>
+
+<div class="header-deco"></div>
+<div class="decoration"></div>
+
+<div class="home">
+    <p class="under-slider-heading shadow">BUPT信息聚合平台</p>
+</div>
+<div class="empty-clear-menu"></div>
+<div class="about">
+    <div class="demo-buttons" align="center">
+    	<form action="/display/searchResult" method="GET" >
+		<input type="text" name="keyword" value="{{query|escape}}" class="button grey2" size = "30" style="font-family:arial;color:black;font-size:16px;">		
+		<input type="submit" value=" 全文检索 " class="button black">
+	</form>
+</div>
+
+<div class="empty-clear-menu"></div>
+<div class="decoration"></div>
+
+	<!--
+    <div class="full-width" align="center">
+    	<h4 class="shadow">搜索关键词</h4>
+       	<a href=""><p class="highlight shadow"><span class="highlight-orange">关键词1</span></p></a>
+      	<p class="highlight shadow"><span class="highlight-green">关键词2</span></p>        
+       	<p class="highlight shadow"><span class="highlight-yellow">关键词3</span></p>        
+	<p class="highlight last-item shadow"><span class="highlight-gray">关键词4</span></p>        
+    </div>
+    -->
+<div class="empty-clear-menu"></div>
+
+</div>
+</body>
+</html>

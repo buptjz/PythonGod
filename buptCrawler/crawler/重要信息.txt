@@ -1,0 +1,16 @@
+You just installed Django's auth system, which means you don't have any superusers defined.
+Would you like to create one now? (yes/no): yes
+Username (Leave blank to use 'wangjz'): wtv888
+E-mail address: wjz08.08@gmail.com
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/getpass.py:83: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+Password: wjz000
+
+Warning: Password input may be echoed.
+Password (again): wjz000
+
+Superuser created successfully.
+Installing custom SQL ...
+Installing indexes ...
+No fixtures found.

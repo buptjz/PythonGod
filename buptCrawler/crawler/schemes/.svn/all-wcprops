@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mysqluep/!svn/ver/215/trunk/uepv2/Crawler/schemes
+END
+ftp.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/mysqluep/!svn/ver/10/trunk/uepv2/Crawler/schemes/ftp.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/mysqluep/!svn/ver/98/trunk/uepv2/Crawler/schemes/__init__.py
+END
+file.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/mysqluep/!svn/ver/10/trunk/uepv2/Crawler/schemes/file.py
+END
+http.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mysqluep/!svn/ver/258/trunk/uepv2/Crawler/schemes/http.py
+END
+https.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mysqluep/!svn/ver/10/trunk/uepv2/Crawler/schemes/https.py
+END

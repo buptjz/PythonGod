@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>WangJZ Mobile Page</title>
+
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<link href="/css/buttons.css" rel="stylesheet" type="text/css">
+<link href="/css/type.css" rel="stylesheet" type="text/css">
+<link href="/css/add2home.css" rel="stylesheet" type="text/css">
+<link href="/css/flexslider.css" rel="stylesheet" type="text/css">
+<link href="/css/photoswipe.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div class="site">
+  <div class="navigation">
+	<a id="首页"  href="/display/defaultPage">
+    	<img src="/images/nav/item1ns.png" alt="img">
+	    <em class="under-icon-text">首页</em>
+    </a>
+    <a id="分类"  href="/display/classification">
+    	<img src="/images/nav/item2ns.png" alt="img">
+    	<em class="under-icon-text">分类</em>
+    </a>
+    <a id="全文搜索" href="/display/searchPage">
+    	<img src="/images/nav/item3ns.png" alt="img">
+    	<em class="under-icon-text">全文搜索</em>
+    </a>
+    <a id="查询结果"  class="selected" href="/display/searchResult?keyword=&page=1">
+    	<img src="/images/nav/item5ns.png" alt="img">
+    	<em class="under-icon-text">查询结果</em>
+    </a>
+    <a id="关于我们" href="/display/aboutUs">
+    	<img src="/images/nav/item4ns.png" alt="img">
+    	<em class="under-icon-text">关于我们</em>
+    </a>
+</div>
+
+<div class="header-deco"></div>
+<div class="decoration"></div>
+
+<div class="about">
+    <h4 class="shadow"> "{{keyword}}"的查询结果</h4>
+    
+    <div align = "right">
+        {% if links.has_previous %}
+            <a href="?keyword={{keyword}}&page={{ links.previous_page_number }}">上一页</a>
+        {% endif %}
+	({{ links.number }} of {{ links.paginator.num_pages }})
+        {% if links.has_next %}
+            <a href="?keyword={{keyword}}&page={{ links.next_page_number }}">下一页</a>
+        {% endif %}
+    </div>
+    
+    <div class="decoration"></div>
+    <div class="full-width">
+        <ul class="icon-list shadow">
+	    {% for link in links.object_list%}
+		<li class="list-{{link.classification}}"  >
+		<p><a style="font-family:arial;color:blue;font-size:14px;" href = "{{link.url}}">【{{forloop.counter}}】{{link.descriptions }}</a>
+		</p>
+		<p style="padding-left:42px;">作者：{{link.author }}</p>
+		<p style="padding-left:42px;">发布时间：{{link.publishtime}}</p>
+		<p style="padding-left:42px;">信息类别：{{link.classification}}</p>
+		<p style="padding-left:42px;">信息来源：{{link.sourcesite}}</p>
+		</li>
+	    {% endfor%}
+        </ul> 
+    </div>
+    
+    <div align = "center">
+        {% if links.has_previous %}
+            <a href="?keyword={{keyword}}&page={{ links.previous_page_number }}">上一页</a>
+        {% endif %}
+	({{ links.number }} of {{ links.paginator.num_pages }})
+        {% if links.has_next %}
+            <a href="?keyword={{keyword}}&page={{ links.next_page_number }}">下一页</a>
+        {% endif %}
+    </div>
+    
+    
+    
+	
+    <div class="decoration"></div>
+</div>
+
+
+<div class="footer">
+	<div id="tweets"></div>
+    <p class="copyright">&copy; Copyright 2012. All rights reserved. <a href="#">王继哲</a></p>
+</div>
+
+<div class="empty-clear-menu"></div>
+
+</div>
+</body>
+</html>
