@@ -23,7 +23,7 @@ class MutilThread(threading.Thread):
         #while queue.qsize() != 0:
         while True:
             imageID = self.queue.get()
-            size = queue.qsize()
+            #size = queue.qsize()
             #print "Thread's Size: %s" % size
             getImageFromWeb(imageID)
             self.queue.task_done()
