@@ -13,8 +13,8 @@ class PriorityQueue(list):
             self.map[item[1]] = item
 
     def pop(self):
-        r = list.pop(self)#(1, 'http://bbs.byr.cn/board/Job')
-        del self.map[r[1]]#r[1]="http://bbs.byr.cn/board/Job"
+        r = list.pop(self)
+        del self.map[r[1]]
         return r
 
     def getitem(self,url):

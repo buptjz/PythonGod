@@ -73,15 +73,32 @@ def getData(category):
     valuesDic = {'24':avg24List,'rt':rtList}
     return valuesDic,realtimeDensity
         
-def runMainFunc():    
+def runMainFunc(fileName):    
+    print(u'【开始】获取 空气质量指数 和 首要污染物 ')
     generalData = getGeneralData()
+    print(u'【结束】获取 空气质量指数 和 首要污染物 ')
     print(generalData)
+    print(u'……………………………………………………………………………………………………………………')
+    
+    writeData(fileName,u'空气质量指数',None,generalData['quality'],None)
+    writeData(fileName,u'首要污染物',None,generalData['coreBaddie'],None)
     
     for c in infos.ITEMSCHECK:
+        print(u'【开始】获取 '+c)
         values,isRealTime = getData(c)
-        print(c+': ')
-        print(isRealTime)
-        print(values)
-        writeData(filePath,'PM2.5',None,values['24'])
-        break
-    
+        print(u'【结束】获取 '+c)
+        
+        if isRealTime:
+            s = u'【实时信息】：'
+            print(c+s)
+            print(values['rt'])
+        else:
+            s = u'【24均值】'
+            print(c+s)
+            print(values['24'])
+            
+        if isRealTime == True:
+            writeData(fileName,c,None,values['rt'],isRealTime)
+        elif isRealTime == False:
+            writeData(fileName,c,None,values['24'],isRealTime)
+        print(u'……………………………………………………………………………………………………………………')

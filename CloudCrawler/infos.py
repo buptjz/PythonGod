@@ -12,3 +12,5 @@ ITEMSCHECK  = ['PM2.5','PM10','SO2','NO2','O3','CO']
 
 GETDETAILURL = 'http://zx.bjmemc.com.cn/ashx/Data.ashx?Action=GetWRWInfo_ByStationAndWRWType'
 GetGENERALURL = "http://zx.bjmemc.com.cn/ashx/Data.ashx?Action=GetIAQIAll_ByStation"
+
+DISPLAYINFO = "使用流程：\n1、选择将要写入的EXCEl文件\n2、点击获取数据\n\n提示：\n程序默认在EXCEL的SHEET中没有数据的一列写入数据\n需要手动填写日期\n"
