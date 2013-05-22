@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
 #Write Data into Excel file
-
 import tkFileDialog
 from Tkinter import *  #引入模块
 from postRequest import *
@@ -12,7 +11,7 @@ import ttk
 FILEPATH = None
 
 def runMain(ev=None):
- 
+    top.destroy()
     runMainFunc(FILEPATH.get())
     
 def openFileDialog():
@@ -37,10 +36,12 @@ def getSettings():
     
 
 #config函数就是通过设置组件的参数来改变组件的，这里改变的是font字体大小
+top = None
 def main():
-    global FILEPATH
+    global FILEPATH,top
   
     top=Tk()   #主窗口
+    top.title(u'空气数据')
     top.geometry('600x380')  #设置了主窗口的初始大小600x400
     
     #label=Label(top,text=infos.DISPLAYINFO,font='Helvetica -18 bold',justify = 'left')  #设置标签字体的初始大小

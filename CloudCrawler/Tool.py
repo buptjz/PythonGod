@@ -58,7 +58,6 @@ class Parser():
             href = m.group(1)
             location = href.find("user")
             if location == -1:
-                #href = "http://bbs.byr.cn" + href#BYRbbs only gives the relative path href,so..
                 href = "http://buptoa.bupt.edu.cn" + href
                 #href = "http://zsb.bupt.edu.cn/" + href
                 self.links.append(href)
