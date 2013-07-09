@@ -14,16 +14,6 @@ class timer(threading.Thread): #The timer class is derived from the class thread
     def stop(self):  
         self.thread_stop = True  
          
-   
-def test():  
-    thread1 = timer(1, 1)  
-    thread2 = timer(2, 2)  
-    thread1.start()  
-    thread2.start()  
-    time.sleep(10)  
-    thread1.stop()  
-    thread2.stop()  
-    return  
-   
+      
 if __name__ == '__main__':  
     test()  

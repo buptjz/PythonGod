@@ -13,8 +13,8 @@ class PriorityQueue(list):
             self.map[item[1]] = item
 
     def pop(self):
-        r = list.pop(self)#(1, 'http://bbs.byr.cn/board/Job')
-        del self.map[r[1]]#r[1]="http://bbs.byr.cn/board/Job"
+        r = list.pop(self)
+        del self.map[r[1]]
         return r
 
     def getitem(self,url):
@@ -58,7 +58,6 @@ class Parser():
             href = m.group(1)
             location = href.find("user")
             if location == -1:
-                #href = "http://bbs.byr.cn" + href#BYRbbs only gives the relative path href,so..
                 href = "http://buptoa.bupt.edu.cn" + href
                 #href = "http://zsb.bupt.edu.cn/" + href
                 self.links.append(href)

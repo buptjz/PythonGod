@@ -1,0 +1,59 @@
+
+
+<div id="mainPanel">
+  <div id="wrwqp_1">
+         <div id="wrwqp_2">
+               <div id="wrwqp_9">
+              <center><span style="font-family: 宋体, sans-serif;color: #050505;font-size: 12px;letter-spacing: -0.6pt;word-spacing: -9.8pt;line-height: 1.8;">实时浓度</span></center>
+              
+                     <center><span style="font-family: 宋体, sans-serif;color: #050505;font-size: 12px;letter-spacing: -0.6pt;word-spacing: -9.8pt;line-height: 1.0;">(微克/立方米)</span></center> 
+                  
+                  
+               
+               <br>
+               <center><span style="font-family: arial, sans-serif;color: #050505;font-size: 23px;font-weight: bold;letter-spacing: -0.4pt;word-spacing: -8.2pt;line-height: 1.0;">
+               3
+                   </span></center>
+               </div>
+               <div id="wrwqp_8">
+               <span style='font-family: arial, sans-serif;font-size: 15px;font-weight: bold;letter-spacing: -0.4pt;word-spacing: 0pt;line-height: 1.8;'>
+               八达岭<span id="StationTypeSpan" style='font-family: arial, sans-serif;font-size: 15px;font-weight: bold;letter-spacing: -0.4pt;word-spacing: 0pt;line-height: 1.8;'>(环境评价点)</span>&nbsp;&nbsp;PM2.5&nbsp;2013-05-12 10:00:00
+                </span>
+               </div>
+               <div id="wrwqp_11">
+              <center><span style="font-family: 宋体, sans-serif;color: #050505;font-size: 12px;letter-spacing: -0.6pt;word-spacing: -9.8pt;line-height: 1.8;">24小时均值</span></center>
+                 
+                     <center><span style="font-family: 宋体, sans-serif;color: #050505;font-size: 12px;letter-spacing: -0.6pt;word-spacing: -9.8pt;line-height: 1.0;">(微克/立方米)</span></center>
+                  
+                  
+               
+               <br>
+               <center><span style="font-family: arial, sans-serif;color: #050505;font-size: 23px;font-weight: bold;letter-spacing: -0.4pt;word-spacing: -8.2pt;line-height: 1.0;">12</span></center>
+
+               </div>
+               <div id="wrwqp_12">
+              <center><span style="font-family: 宋体, sans-serif;color: #050505;font-size: 12px;letter-spacing: -0.6pt;word-spacing: -9.8pt;line-height: 1.8;">空气质量分指数</span></center>
+               <center><span style="font-family: 宋体, sans-serif;color: #050505;font-size: 12px;letter-spacing: -0.6pt;word-spacing: -9.8pt;line-height: 1.0;">(IAQI)</span></center>
+               <br>
+               <center><span id="WRWInfoIAQI" style="font-family: arial, sans-serif;color: #050505;font-size: 23px;font-weight: bold;letter-spacing: -0.4pt;word-spacing: -8.2pt;line-height: 1.0;">16</span></center>
+               </div>
+               <div id="wrwqp_14">
+               <center><span style="font-family: 宋体, sans-serif;color: #050505;font-size: 12px;letter-spacing: -0.6pt;word-spacing: -9.8pt;line-height: 1.8;">级别及类别</span></center>
+               <center><span style="font-family: arial, sans-serif;color: #050505;font-size: 23px;font-weight: bold;letter-spacing: -0.4pt;word-spacing: -8.2pt;line-height: 2.0;">一级</span></center>
+              <center><span id="wrw_jb" style="font-family: arial, sans-serif;color: #050505;font-size: 22px;font-weight: bold;letter-spacing: -0.4pt;word-spacing: -8.2pt;line-height: 0.8;">优</span></center>
+               </div>
+          </div>
+          <div id="wrwqp_4" style="display:none">
+               <div id="wrwqp_15">
+               <div id="chartPanel"></div>
+               <div id="chartLegend"></div>
+               </div>
+          </div>
+          <div id="wrwqp_16">
+               <div id="chartOnOff">
+               </div>
+          </div>
+     </div>
+</div>
+
+ 
