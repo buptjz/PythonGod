@@ -5,4 +5,4 @@ strList = testFile.readlines()
 
 inverseDic = makeInverseIndex(strList)
 result = andSearch(inverseDic,["even","it"])
-print(result)
+print(inverseDic)

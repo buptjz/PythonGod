@@ -8,7 +8,7 @@ def movie_review(name):
     Output: a string (one of the review options), selected at random using randint
     """
     review_options = ["See it!", "A gem!", "Ideological claptrap!"]
-    return review_options[randomint(0,len(review_options)-1)]
+    return review_options[randint(0,len(review_options)-1)]
 
 ## Tasks 2 and 3 are in dictutil.py
 
@@ -37,8 +37,8 @@ def makeInverseIndex(strlist):
         for (no,doc) in docDic.items():
             if word in doc.split():
                 inverseDic[word].append(no)
-    #print(inverseDic)
-    return inverseDic
+    inverseDicSet = {k:set(v) for (k,v) in inverseDic.items()}
+    return inverseDicSet
 
 ## Task 5
 def orSearch(inverseIndex, query):
@@ -48,8 +48,13 @@ def orSearch(inverseIndex, query):
     """
 
     noList = [inverseIndex[word] for word in query]
-    
-    return set(sum(noList,[]))
+    if len(noList) != 0:
+        retSet = set(noList[0])
+        for aList in noList:
+            retSet = retSet | set(aList)
+        return retSet
+    else:
+        return Null
 
 ## Task 6
 def andSearch(inverseIndex, query):

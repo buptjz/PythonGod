@@ -2,7 +2,7 @@
 minutes_in_week = 24 * 60 * 7
 
 ## Task 2
-remainder_without_mod = 2304811 // 47
+remainder_without_mod = 2304811//47
 
 ## Task 3
 divisible_by_3 = not (673+909) % 3
@@ -41,7 +41,7 @@ L_average = sum([20, 10, 15, 75])/len([20, 10, 15, 75])
 
 ## Task 12
 LofL = [[.25, .75, .1], [-1, 0], [4, 4, 4, 4]]
-LofL_sum = sum([sum(LofL[0]) ,sum(LofL[1]),sum(LofL[2]) ])
+LofL_sum = sum(sum(LofL,[]))
 
 ## Task 13
 cartesian_product = [[x,y] for x in ['A','B','C'] for y in [1,2,3]]
@@ -51,10 +51,10 @@ S = {-4, -2, 1, 2, 5, 0}
 zero_sum_list =[ (x,y,z) for x in S for y in S for z in S if x+y+z == 0 ] 
 
 ## Task 15
-exclude_zero_list = [ ... ]
+exclude_zero_list = [ (x,y,z) for x in S for y in S for z in S if x+y+z == 0 and (x!=0 or y!=0 or z !=0)] 
 
 ## Task 16
-first_of_tuples_list = ...
+first_of_tuples_list = [ (x,y,z) for x in S for y in S for z in S if x+y+z == 0 and (x!=0 or y!=0 or z !=0)] [0]
 
 ## Task 17
 L1 = [1,2,1] # <-- want len(L1) != len(list(set(L1)))
@@ -78,9 +78,9 @@ value_list = [i[k] for i in dlist]
 ## Task 22
 dlist = [{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Richard'}]
 k = 'Bilbo'
-value_list_modified_1 = [i[k] for i in dlist if k in i]
+value_list_modified_1 = [i[k] if k in i else 'NOT PRESENT' for i in dlist ]
 k = 'Frodo'
-value_list_modified_2 = [i[k] for i in dlist if k in i]
+value_list_modified_2 = [i[k] if k in i else 'NOT PRESENT' for i in dlist ]
 
 ## Task 23
 square_dict = {k:k*k for k in range(100)}
@@ -92,7 +92,7 @@ identity_dict = {...}
 ## Task 25
 base = 10
 digits = set(range(10))
-representation_dict = {k:(a,b,c) for k in range(base*base*base) for a in digits for b in digits for c in digits if a*base*base +b*base +c ==k}
+representation_dict = {k:[a,b,c] for k in range(base*base*base) for a in digits for b in digits for c in digits if a*base*base +b*base +c ==k}
 
 ## Task 26
 d = {0:1000.0, 1:1200.50, 2:990}
