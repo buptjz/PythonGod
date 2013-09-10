@@ -1,3 +1,7 @@
+#Use opencv to compute the sift descriptor of an image
+#http://www.cvchina.info/2011/07/28/opencv2-3-python/
+#http://jayrambhia.com/blog/sift-keypoint-matching-using-python-opencv/
+
 import cv2,cv
 import numpy as np
 import itertools
