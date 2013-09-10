@@ -18,7 +18,6 @@ The simpler approach, which should already give you a healthy speed-up, is to ma
 The superior approach stores the unprocessed vertices in the heap, as described in lecture. 
 Note this requires a heap that supports deletions, and you'll probably need to maintain some kind of mapping between vertices and their positions in the heap.
 '''
-
 class Node:
     def __init__(self,id,key,edge,isX):
         self.id = id
