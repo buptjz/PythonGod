@@ -68,6 +68,24 @@ for line in lines:
         nodes[end2-1].edge.append(lineNumber)
         
     lineNumber += 1
-    
+
+X = [nodes[0]]
+nodes[0].isX = True
+#V_X = heap()
+
+def computeKey(node):
+    costs = []
+    edgesOfNode = node.edge
+    for edge in edgesOfNode:
+        end1 = edge[0]
+        end2 = edge[1]
+        cost = edge[2]
+        if nodes[end1].isX or nodes[end2].isX:
+            costs.append[cost]
+    return max(costs) if costs else 9999
+
+#initialize the heap
+for node in nodes[1:]:
+    node.key = computeKey(node)
 print(123)
     
