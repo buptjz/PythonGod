@@ -10,7 +10,15 @@ class jzHeap:
     def deleteItem(self,index):
         #Delete the index item and move the last item to this index,and then try bubbleDown
         #If bubbleDown does nothing,try bubbleUp
+        
+        #if delete the last,do it directly
+        if len(self.heapList) == index+1:
+            del self.heapList[-1]
+            return
+        
         self.heapList[index] = self.heapList[-1]
+        self.heapList[index].index = index
+        
         del self.heapList[-1]
         if len(self.heapList) <= 0 :
             return
@@ -22,7 +30,11 @@ class jzHeap:
         
     def getMin(self):
         retItem = self.heapList[0]
+        if len(self.heapList) == 1:
+            del self.heapList[-1]
+            return retItem
         self.heapList[0] = self.heapList[-1]
+        self.heapList[0].index = 0
         del self.heapList[-1]
         self.bubbleDown(0)
         
@@ -43,6 +55,11 @@ class jzHeap:
         parent = (index - 1) / 2
         if self.heapList[index] < self.heapList[parent]:
             self.heapList[index],self.heapList[parent] = self.heapList[parent],self.heapList[index]
+            
+            #Set the index of the exchanged two nodes
+            self.heapList[index].index = index
+            self.heapList[parent].index = parent
+            
             self.bubbleUp(parent)
         return
     
@@ -61,6 +78,11 @@ class jzHeap:
                 if self.heapList[index] > self.heapList[index * 2 + 1]:
                     self.heapList[index],self.heapList[index * 2 + 1] = \
                         self.heapList[index * 2 + 1],self.heapList[index]
+                    
+                    #Set the index of the exchanged two nodes
+                    self.heapList[index].index = index
+                    self.heapList[index * 2 + 1].index = index * 2 + 1
+                    
                     self.bubbleDown(index * 2 +1)
                 #left <= index
                 else:
@@ -72,6 +94,11 @@ class jzHeap:
             #index > the smaller one of the two child
             if self.heapList[index] > self.heapList[smallerOne]:
                 self.heapList[index],self.heapList[smallerOne] = self.heapList[smallerOne],self.heapList[index]
+                
+                #Set the index of the exchanged two nodes
+                self.heapList[index].index = index
+                self.heapList[smallerOne].index = smallerOne
+                    
                 self.bubbleDown(smallerOne)
         return
 
