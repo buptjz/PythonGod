@@ -111,5 +111,5 @@ while V_X.heapList:
                     
     
     
-print(123)
+print("Overall cost of a minimum spanning tree"+str(sum([x.key for x in X])))
     
