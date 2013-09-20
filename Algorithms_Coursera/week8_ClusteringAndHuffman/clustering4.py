@@ -1,3 +1,5 @@
+#Try to solve Q2,failed again.
+
 def merge(A,B):
     if not node_cluster_index[A] == node_cluster_index[B]:
         clusters[node_cluster_index[A]] += clusters[node_cluster_index[B]]  
