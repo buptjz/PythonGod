@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     (r'^testYanbing$','buptCrawler.display.views.testYanbing'),
     (r'^testYanbing2$','buptCrawler.display.views.testYanbing2'),
     (r'^jwPlayer$','buptCrawler.display.views.testYanbing2'),
-     
+    
+     (r'^send_score$','buptCrawler.display.views.send_score'),
     #(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root' : settings.STATIC_PATH}),
 )

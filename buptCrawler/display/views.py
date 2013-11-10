@@ -6,6 +6,16 @@ from buptCrawler.crawler.models  import Link,IndexDB
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import simplejson
 
+def send_score(request):
+    #127.0.0.1:8000/display/send_score?score=90&name=wjz
+    #This handler deals with the rate system
+    if request.GET.has_key('score') and request.GET.has_key('name'):
+	score = request.REQUEST['score']
+	name = request.REQUEST['name']
+	
+	print "[name]\t%s\n[Score]\t%s\n" %(name,score)
+    return HttpResponse("got that")
+
 def testYanbing2(request):
     return render_to_response('jwPlayer.html')
 
