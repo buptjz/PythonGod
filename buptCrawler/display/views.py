@@ -5,16 +5,36 @@ from django.shortcuts import render_to_response
 from buptCrawler.crawler.models  import Link,IndexDB
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import simplejson
+from models import RateScore,CurrentPlayer
 
-def send_score(request):
-    #127.0.0.1:8000/display/send_score?score=90&name=wjz
-    #This handler deals with the rate system
-    if request.GET.has_key('score') and request.GET.has_key('name'):
-	score = request.REQUEST['score']
-	name = request.REQUEST['name']
+def get_current_player(request):
+    '''客户端发来请求，获取当前选手id'''
+    #http://127.0.0.1:8000/display/get_current_player?pid=3
+    if request.GET.has_key('pid'):
+	print u"[评委%s]\t发来请求,请求获取当前选手" %(request.REQUEST['pid'])
 	
-	print "[name]\t%s\n[Score]\t%s\n" %(name,score)
-    return HttpResponse("got that")
+	currents = CurrentPlayer.objects.all()
+	if currents:
+	    current = currents[0]#return the only object
+	    return HttpResponse("currentplayerid:"+current.current_player.playerID)
+    else:
+	return HttpResponse(u"fail get current player 工作人员在调试，请稍后重试")
+    
+def send_score(request):
+    ''''客户端发送来选手得分，存入数据库'''
+    #http://127.0.0.1:8000/display/send_score?jid=5&pid=3&score=90
+    #This handler deals with the rate system
+    if request.GET.has_key('score'):
+	_judgerID = request.REQUEST['jid']
+	_playerID = request.REQUEST['pid']
+	#_name = request.REQUEST['name']
+	_score = request.REQUEST['score']
+	print u"[评委%s]发送评分\n[选手:%s]\n[得分:%s]\n" %(_judgerID,_playerID,_score)
+	p = RateScore.objects.create(judgerID=_judgerID, playerID=_playerID,playerName='',score=_score)	
+
+	return HttpResponse("got that")    
+    else:
+	return HttpResponse("failed with send score")
 
 def testYanbing2(request):
     return render_to_response('jwPlayer.html')
