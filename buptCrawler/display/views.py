@@ -5,13 +5,13 @@ from django.shortcuts import render_to_response
 from buptCrawler.crawler.models  import Link,IndexDB
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import simplejson
-from models import RateScore,CurrentPlayer
+from models import RateScore,CurrentPlayer,Player
 
 def get_current_player(request):
     '''客户端发来请求，获取当前选手id'''
-    #http://127.0.0.1:8000/display/get_current_player?pid=3
-    if request.GET.has_key('pid'):
-	print u"[评委%s]\t发来请求,请求获取当前选手" %(request.REQUEST['pid'])
+    #http://127.0.0.1:8000/display/get_current_player?jid=3
+    if request.GET.has_key('jid'):
+	print u"[评委%s]\t发来请求,请求获取当前选手" %(request.REQUEST['jid'])
 	
 	currents = CurrentPlayer.objects.all()
 	if currents:
@@ -27,12 +27,15 @@ def send_score(request):
     if request.GET.has_key('score'):
 	_judgerID = request.REQUEST['jid']
 	_playerID = request.REQUEST['pid']
-	#_name = request.REQUEST['name']
+	
+	_player = Player.objects.get(playerID = _playerID)
+	_name = _player.playerName
+	
 	_score = request.REQUEST['score']
 	print u"[评委%s]发送评分\n[选手:%s]\n[得分:%s]\n" %(_judgerID,_playerID,_score)
-	p = RateScore.objects.create(judgerID=_judgerID, playerID=_playerID,playerName='',score=_score)	
+	p = RateScore.objects.create(judgerID=_judgerID, playerID=_playerID,playerName=_name,score=_score)	
 
-	return HttpResponse("got that")    
+	return HttpResponse("succesrate")    
     else:
 	return HttpResponse("failed with send score")
 
